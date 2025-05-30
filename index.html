@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="images/icon.png" type="image/x-icon">
+    <title>GVC</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-login">
+            <img src="images/logo.JPG" alt="GVC logo" class="logo">
+            <h2>Galaxy Volleyball Club</h2>
+        </div>
+        <button type="button" class="login-button">Вход</button>
+    </header>
+
+    <div class="content">
+        <form id="user-form" class="user-form auth-only">
+            <div class="form-group">
+                <label for="name">Имя Фамилия <span class="required">*</span></label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telegram">Телеграм ник <span class="required">*</span></label>
+                <input type="text" id="telegram" placeholder="@username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lessons">Кол-во занятий <span class="required">*</span></label>
+                <input type="number" id="lessons" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="purchase-date">Дата покупки <span class="required">*</span></label>
+                <input type="date" id="purchase-date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Категория <span class="required">*</span></label>
+                <select id="category" required>
+                    <option value="">Выберите</option>
+                    <option value="child_male">Дет.Мал</option>
+                    <option value="child_female">Дет.Дев</option>
+                    <option value="general">Общая гр.</option>
+                    <option value="amateurs">Любители</option>
+                    <option value="advanced">Продвинутые</option>
+                </select>
+            </div>
+
+            <button type="submit" class="add-button">Добавить</button>
+        </form>
+
+        <div class="filters-container">
+            <div class="divider"></div>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="category-filter">Фильтр по категории:</label>
+                    <select id="category-filter">
+                        <option value="all">Все категории</option>
+                        <option value="child_male">Дет.Мал</option>
+                        <option value="child_female">Дет.Дев</option>
+                        <option value="general">Общая гр.</option>
+                        <option value="amateurs">Любители</option>
+                        <option value="advanced">Продвинутые</option>
+                    </select>
+                </div>
+
+                <div class="search-group">
+                    <label for="search-input">Поиск:</label>
+                    <input type="text" id="search-input" placeholder="Имя или телеграм">
+                </div>
+
+                <button id="reset-filters" class="reset-btn">Сбросить фильтры</button>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <ul class="added-users" id="users-list"></ul>
+    </div>
+
+    <script src="./script.js"></script>
+
+    <!-- login module -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h2>Вход</h2>
+            <div class="input-group">
+                <label for="login-username">Логин:</label>
+                <input type="text" id="login-username" placeholder="Введите логин">
+            </div>
+            <div class="input-group">
+                <label for="login-password">Пароль:</label>
+                <input type="password" id="login-password" placeholder="Введите пароль">
+            </div>
+            <button id="login-submit" class="login-submit-btn">Войти</button>
+            <p id="login-error" class="error-message"></p>
+        </div>
+    </div>
+</body>
+
+</html>
