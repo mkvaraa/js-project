@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     const ADMIN_CREDENTIALS = {
-        login: 'gvc_admin_access',
-        password: 'password_for_gvc_228'
+        login: '123',
+        password: '123'
     };
 
     const elements = {
